@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/* Class-based dark mode — toggled on <html> by ThemeToggle */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── iPAB design tokens (see DESIGN_SYSTEM.md) ─────────────────────────── */
+@theme {
+  /* Colors */
+  --color-navy: #0a1a2f;
+  --color-navy-800: #11263f;
+  --color-off-white: #f6f8fb;
+  --color-ink: #0f172a;
+  --color-slate: #5b6b82;
+
+  /* Semantic roles — these flip in dark mode (see .dark below).
+     Literal colors (navy, white, green) keep their role on dark sections. */
+  --color-surface: #ffffff; /* page background */
+  --color-surface-2: #f6f8fb; /* alternating sections, insets */
+  --color-card: #ffffff; /* cards, panels, dropdowns */
+  --color-heading: #0a1a2f; /* headings + primary UI text (navy as text) */
+  /* TODO: verify --color-blue against the real iPAB logo blue once assets arrive */
+  --color-blue: #1b6df3;
+  --color-green: #16a34a; /* WhatsApp CTAs + success states ONLY — never decorative */
+  --color-green-600: #15803d;
+  --color-amber: #f5a623;
+
+  /* Typography */
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Type scale: h1 56/36, h2 40/28, h3 24/20, body 17/16, small 14 */
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.02em;
+  --text-display-sm: 2.25rem;
+  --text-display-sm--line-height: 1.1;
+  --text-display-sm--letter-spacing: -0.02em;
+  --text-h2: 2.5rem;
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2-sm: 1.75rem;
+  --text-h2-sm--line-height: 1.15;
+  --text-h2-sm--letter-spacing: -0.02em;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.01em;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.6;
+
+  /* Layout */
+  --container-site: 75rem; /* 1200px */
+
+  /* Shadows — flat by default, lift on hover only */
+  --shadow-card: 0 1px 2px 0 rgb(15 23 42 / 0.04);
+  --shadow-lift: 0 12px 24px -8px rgb(15 23 42 / 0.12),
+    0 4px 8px -4px rgb(15 23 42 / 0.06);
+
+  /* Motion */
+  --animate-pulse-ring: pulse-ring 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes pulse-ring {
+    0%,
+    70%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(22 163 74 / 0.45);
+    }
+    80% {
+      box-shadow: 0 0 0 12px rgb(22 163 74 / 0);
+    }
+  }
+}
+
+/* ── Dark theme values ─────────────────────────────────────────────────── */
+html {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+  --color-surface: #081120;
+  --color-surface-2: #0c1830;
+  --color-card: #11263f; /* navy-800 — "cards on dark" per design system */
+  --color-heading: #eaf1fb;
+  --color-ink: #dce5f2;
+  --color-slate: #93a5c0;
+  --color-blue: #6fa3f8; /* lifted for AA contrast on dark surfaces */
+}
+
+.dark ::selection {
+  color: var(--color-navy);
+}
+
+/* ── Base ──────────────────────────────────────────────────────────────── */
+body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* Visible focus everywhere (a11y: contrast AA, keyboard users) */
+:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-pulse-ring {
+    animation: none;
+  }
+}
+
+/* ── Reusable primitives ───────────────────────────────────────────────── */
+@utility container-site {
+  margin-inline: auto;
+  max-width: var(--container-site);
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Tiny ALL-CAPS eyebrow label — the only allowed caps */
+@utility eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+/* Dot-grid pattern for dark sections, <5% opacity per design system */
+@utility dot-grid-dark {
+  background-image: radial-gradient(
+    rgb(255 255 255 / 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
