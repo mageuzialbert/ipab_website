@@ -30,8 +30,37 @@ export type SolutionPage = {
   painsHeading: string;
   pains: string[];
   mockupCaption: string;
+  /** Real product screenshots; personal details pixelated before publishing. */
+  screenshots?: Array<{
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+    caption: string;
+  }>;
   miniFaq: Faq[];
   cta: { heading: string; sub: string };
+};
+
+/** Real product screenshots provided by Albert (June 2026); guest/student
+ *  names, registration numbers, and college branding removed before they
+ *  entered the repo. */
+const SHOT_FILES = {
+  hotelRooms: {
+    src: "/screenshots/smarthotels-rooms.webp",
+    width: 1600,
+    height: 770,
+  },
+  collegeResults: {
+    src: "/screenshots/smartcolleges-results.webp",
+    width: 1596,
+    height: 1167,
+  },
+  collegeAttendance: {
+    src: "/screenshots/smartcolleges-attendance.webp",
+    width: 930,
+    height: 556,
+  },
 };
 
 export const SOLUTION_PAGES: Record<Lang, Record<SolutionSlug, SolutionPage>> =
@@ -118,6 +147,14 @@ export const SOLUTION_PAGES: Record<Lang, Record<SolutionSlug, SolutionPage>> =
         ],
         mockupCaption:
           "Tonight's house at a glance; rooms, bills, housekeeping.",
+        screenshots: [
+          {
+            ...SHOT_FILES.hotelRooms,
+            alt: "Real SmartHotels room status board",
+            caption:
+              "The real SmartHotels room board: available, occupied, and housekeeping at a glance. Guest names blurred.",
+          },
+        ],
         miniFaq: [
           {
             question: "Does it cover the restaurant and bar?",
@@ -154,6 +191,20 @@ export const SOLUTION_PAGES: Record<Lang, Record<SolutionSlug, SolutionPage>> =
         ],
         mockupCaption:
           "Attendance, compliance, and fees; ready when NACTVET asks.",
+        screenshots: [
+          {
+            ...SHOT_FILES.collegeResults,
+            alt: "Real module results report produced by SmartColleges",
+            caption:
+              "Real module results, computed and graded automatically the moment CATs close.",
+          },
+          {
+            ...SHOT_FILES.collegeAttendance,
+            alt: "Real attendance report produced by SmartColleges",
+            caption:
+              "A real attendance report; percentages computed automatically, ready for NACTVET. Student details blurred.",
+          },
+        ],
         miniFaq: [
           {
             question: "Does it produce what NACTVET asks for?",
@@ -261,6 +312,14 @@ export const SOLUTION_PAGES: Record<Lang, Record<SolutionSlug, SolutionPage>> =
         ],
         mockupCaption:
           "Hali ya leo kwa mtazamo mmoja; vyumba, bili, usafi.",
+        screenshots: [
+          {
+            ...SHOT_FILES.hotelRooms,
+            alt: "Ubao halisi wa vyumba wa SmartHotels",
+            caption:
+              "Ubao halisi wa vyumba wa SmartHotels: vilivyo wazi, vilivyokaliwa, na usafi kwa mtazamo mmoja. Majina ya wageni yamefichwa.",
+          },
+        ],
         miniFaq: [
           {
             question: "Inahusisha mgahawa na baa?",
@@ -297,6 +356,20 @@ export const SOLUTION_PAGES: Record<Lang, Record<SolutionSlug, SolutionPage>> =
         ],
         mockupCaption:
           "Mahudhurio, uzingatiaji, na ada; tayari NACTVET wakiuliza.",
+        screenshots: [
+          {
+            ...SHOT_FILES.collegeResults,
+            alt: "Ripoti halisi ya matokeo ya moduli kutoka SmartColleges",
+            caption:
+              "Matokeo halisi ya moduli, yanakokotolewa na kupangwa daraja moja kwa moja mara CAT zinapofungwa.",
+          },
+          {
+            ...SHOT_FILES.collegeAttendance,
+            alt: "Ripoti halisi ya mahudhurio kutoka SmartColleges",
+            caption:
+              "Ripoti halisi ya mahudhurio; asilimia zinakokotolewa moja kwa moja, tayari kwa NACTVET. Taarifa za wanafunzi zimefichwa.",
+          },
+        ],
         miniFaq: [
           {
             question: "Inatoa kile NACTVET wanachohitaji?",

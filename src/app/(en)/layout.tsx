@@ -1,7 +1,6 @@
 import AIChat from "@/components/AIChat";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import { UI } from "@/lib/i18n";
 
 export default function EnglishLayout({
@@ -22,7 +21,6 @@ export default function EnglishLayout({
         {children}
       </main>
       <Footer lang="en" />
-      <WhatsAppButton lang="en" />
       <AIChat lang="en" />
     </>
   );

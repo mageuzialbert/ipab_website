@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import AIChat from "@/components/AIChat";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import { SITE } from "@/content/site";
 import { UI } from "@/lib/i18n";
 
@@ -40,7 +39,6 @@ export default function SwahiliLayout({
         {children}
       </main>
       <Footer lang="sw" />
-      <WhatsAppButton lang="sw" />
       <AIChat lang="sw" />
     </div>
   );

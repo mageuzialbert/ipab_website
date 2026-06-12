@@ -6,7 +6,10 @@ import type { Lang } from "@/lib/i18n";
 
 /**
  * Trust bar; immediately under the hero. Transparent client logos,
- * grayscale 60% → full color on hover (white silhouettes in dark mode).
+ * grayscale 60% → full color on hover (white silhouettes in dark mode),
+ * scrolling right-to-left in a continuous marquee (paused on hover,
+ * stilled under prefers-reduced-motion). The row is rendered twice and
+ * each copy slides by its own width, so the loop is seamless.
  */
 export default function LogoStrip({ lang = "en" }: { lang?: Lang }) {
   return (
@@ -18,18 +21,26 @@ export default function LogoStrip({ lang = "en" }: { lang?: Lang }) {
           </p>
         </Reveal>
         <Reveal delay={0.08}>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 sm:gap-x-12">
-            {CLIENTS.map((client) => (
-              <Image
-                key={client.name}
-                src={client.src}
-                alt={`${client.name} logo`}
-                title={client.name}
-                width={client.width}
-                height={client.height}
-                unoptimized
-                className="h-7 w-auto max-w-32 opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:h-8 dark:brightness-0 dark:invert dark:hover:opacity-90"
-              />
+          <div className="group mt-7 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            {[0, 1].map((copy) => (
+              <div
+                key={copy}
+                aria-hidden={copy === 1}
+                className="animate-marquee flex min-w-max flex-none items-center gap-10 pr-10 group-hover:[animation-play-state:paused] sm:gap-12 sm:pr-12"
+              >
+                {CLIENTS.map((client) => (
+                  <Image
+                    key={client.name}
+                    src={client.src}
+                    alt={`${client.name} logo`}
+                    title={client.name}
+                    width={client.width}
+                    height={client.height}
+                    unoptimized
+                    className="h-7 w-auto max-w-32 opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:h-8 dark:brightness-0 dark:invert dark:hover:opacity-90"
+                  />
+                ))}
+              </div>
             ))}
           </div>
         </Reveal>

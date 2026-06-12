@@ -5,13 +5,19 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import Logo from "@/components/Logo";
+import SolutionMockup from "@/components/SolutionMockup";
 import ThemeToggle from "@/components/ThemeToggle";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
-import { SOLUTIONS } from "@/content/solutions";
+import {
+  SOLUTION_SLUGS,
+  SOLUTIONS,
+  type SolutionSlug,
+} from "@/content/solutions";
 import { UI, localeHref, type Lang } from "@/lib/i18n";
 
 export default function Header({ lang = "en" }: { lang?: Lang }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [preview, setPreview] = useState<SolutionSlug>("smartpoint");
   const pathname = usePathname();
   const ui = UI[lang];
 
@@ -56,23 +62,48 @@ export default function Header({ lang = "en" }: { lang?: Lang }) {
                 />
               </svg>
             </Link>
-            {/* Dropdown; opens on hover and keyboard focus */}
-            <div className="invisible absolute left-0 top-full w-80 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-              <div className="overflow-hidden rounded-2xl border border-slate/10 bg-card p-2 shadow-lift">
-                {SOLUTIONS[lang].map((s) => (
-                  <Link
-                    key={s.slug}
-                    href={localeHref(lang, `/solutions/${s.slug}`)}
-                    className="block rounded-xl px-4 py-3 transition-colors hover:bg-surface-2"
-                  >
-                    <span className="block font-semibold text-ink">
-                      {s.name}
-                    </span>
-                    <span className="block text-sm text-slate">
-                      {s.tagline}
-                    </span>
-                  </Link>
-                ))}
+            {/* Dropdown; opens on hover and keyboard focus. Hovering a
+                solution shows its coded product mockup as an instant preview. */}
+            <div className="invisible absolute left-0 top-full w-[40rem] translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              <div className="flex overflow-hidden rounded-2xl border border-slate/10 bg-card shadow-lift">
+                <div className="w-72 shrink-0 p-2">
+                  {SOLUTIONS[lang].map((s) => (
+                    <Link
+                      key={s.slug}
+                      href={localeHref(lang, `/solutions/${s.slug}`)}
+                      onMouseEnter={() => setPreview(s.slug)}
+                      onFocus={() => setPreview(s.slug)}
+                      className={`block rounded-xl px-4 py-3 transition-colors ${
+                        preview === s.slug ? "bg-surface-2" : ""
+                      }`}
+                    >
+                      <span className="block font-semibold text-ink">
+                        {s.name}
+                      </span>
+                      <span className="block text-sm text-slate">
+                        {s.tagline}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+                {/* Preview pane; all four stay mounted so the swap is instant */}
+                <div
+                  aria-hidden="true"
+                  className="relative flex-1 select-none overflow-hidden border-l border-slate/10 bg-surface-2"
+                >
+                  {SOLUTION_SLUGS.map((slug) => (
+                    <div
+                      key={slug}
+                      className={`absolute inset-0 p-4 transition-opacity duration-200 ${
+                        preview === slug ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <div className="w-[30rem] origin-top-left scale-[0.62]">
+                        <SolutionMockup slug={slug} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

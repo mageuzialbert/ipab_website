@@ -7,6 +7,7 @@ import type { Lang } from "@/lib/i18n";
 
 export default function Hero({ lang = "en" }: { lang?: Lang }) {
   const hero = HERO[lang];
+  const [h1Before, h1After] = hero.h1.split(hero.h1Highlight);
 
   return (
     <section className="relative overflow-hidden">
@@ -24,7 +25,9 @@ export default function Hero({ lang = "en" }: { lang?: Lang }) {
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="mt-4 text-balance font-display text-display-sm font-bold text-heading md:text-display">
-              {hero.h1}
+              {h1Before}
+              <span className="text-blue">{hero.h1Highlight}</span>
+              {h1After}
             </h1>
           </Reveal>
           <Reveal delay={0.16}>

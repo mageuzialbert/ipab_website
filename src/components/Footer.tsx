@@ -103,8 +103,15 @@ export default function Footer({ lang = "en" }: { lang?: Lang }) {
                   </a>
                 </li>
               ))}
-              {/* TODO: add email once confirmed (SITE.email) */}
-              <li>{SITE.location}</li>
+              <li>
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="transition-colors hover:text-white"
+                >
+                  {SITE.email}
+                </a>
+              </li>
+              <li>{`${SITE.address}, ${SITE.location}`}</li>
               <li>{lang === "sw" ? SITE.hoursSw : SITE.hours}</li>
             </ul>
           </div>

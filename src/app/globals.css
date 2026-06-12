@@ -56,16 +56,11 @@
     0 4px 8px -4px rgb(15 23 42 / 0.06);
 
   /* Motion */
-  --animate-pulse-ring: pulse-ring 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-marquee: marquee 30s linear infinite;
 
-  @keyframes pulse-ring {
-    0%,
-    70%,
-    100% {
-      box-shadow: 0 0 0 0 rgb(22 163 74 / 0.45);
-    }
-    80% {
-      box-shadow: 0 0 0 12px rgb(22 163 74 / 0);
+  @keyframes marquee {
+    to {
+      transform: translateX(-100%);
     }
   }
 }
@@ -120,7 +115,7 @@ html {
   html {
     scroll-behavior: auto;
   }
-  .animate-pulse-ring {
+  .animate-marquee {
     animation: none;
   }
 }

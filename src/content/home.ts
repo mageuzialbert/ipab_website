@@ -10,6 +10,8 @@ export const HERO: Record<
   {
     eyebrow: string;
     h1: string;
+    /** Word inside h1 rendered in brand blue. */
+    h1Highlight: string;
     subhead: string;
     ctaPrimary: string;
     ctaSecondary: string;
@@ -18,6 +20,7 @@ export const HERO: Record<
   en: {
     eyebrow: "iPAB International; Tanzania",
     h1: "Your business is leaking money. We find it.",
+    h1Highlight: "money",
     // Alt H1 options, pick at review:
     // "We fix broken businesses with technology."
     // "Know every shilling. Keep every customer."
@@ -28,11 +31,12 @@ export const HERO: Record<
   },
   sw: {
     eyebrow: "iPAB International; Tanzania",
-    h1: "Biashara yako inavuja pesa. Tunakuonyesha panapovuja.",
+    h1: "Biashara yako inapoteza pesa. Tunakuonyesha panapopotea.",
+    h1Highlight: "pesa",
     subhead:
-      "iPAB inakufungia mfumo rahisi unaofuatilia kila mauzo, kila bidhaa ya stoo, na kila mteja; hakuna kinachopotea, na wateja wengi zaidi wanarudi. Tayari unatumika kwenye biashara 1,220+ za Tanzania.",
-    ctaPrimary: "Ongea nasi WhatsApp",
-    ctaSecondary: "Ona jinsi inavyofanya kazi",
+      "iPAB inakuwekea mfumo rahisi unaofuatilia kila mauzo, kila bidhaa ya stoo, na kila mteja; hakuna kinachopotea, na wateja wengi zaidi wanarudi. Tayari unatumika kwenye biashara 1,220+ za Tanzania.",
+    ctaPrimary: "Chati WhatsApp",
+    ctaSecondary: "Inavyofanya kazi",
   },
 };
 
@@ -174,7 +178,7 @@ export const FINAL_CTA: Record<
     button: "Chat on WhatsApp",
   },
   sw: {
-    heading: "Jua biashara yako inavuja wapi.",
+    heading: "Jua biashara yako inapoteza pesa wapi.",
     sub: "Ujumbe mmoja wa WhatsApp. Tutakuambia hasa tungerekebisha nini.",
     button: "Ongea nasi WhatsApp",
   },

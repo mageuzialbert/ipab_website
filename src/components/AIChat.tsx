@@ -8,7 +8,7 @@ import type { Lang } from "@/lib/i18n";
 import { waLink } from "@/lib/whatsapp";
 
 /**
- * Floating AI chat (above the WhatsApp button). Asks business type + how
+ * Floating AI chat (bottom-right). Asks business type + how
  * sales are recorded via /api/chat, then hands the answers to the iPAB team
  * as a prefilled WhatsApp message. The [[WHATSAPP]] marker in the model's
  * final reply separates the visible closing line from the handoff text.
@@ -73,7 +73,7 @@ export default function AIChat({ lang = "en" }: { lang?: Lang }) {
           type="button"
           onClick={() => setOpen(true)}
           aria-label={t.openAria}
-          className="fixed bottom-[5.25rem] right-5 z-50 inline-flex size-14 items-center justify-center rounded-full bg-blue text-white transition-transform duration-200 hover:scale-105 md:bottom-[5.75rem] md:right-6"
+          className="fixed bottom-5 right-5 z-50 inline-flex size-14 items-center justify-center rounded-full bg-blue text-white transition-transform duration-200 hover:scale-105 md:bottom-6 md:right-6"
         >
           <ChatIcon className="size-7" />
         </button>
@@ -83,7 +83,7 @@ export default function AIChat({ lang = "en" }: { lang?: Lang }) {
         <div
           role="dialog"
           aria-label={t.title}
-          className="fixed bottom-[5.25rem] left-4 right-4 z-50 flex max-h-[70vh] flex-col overflow-hidden rounded-2xl border border-slate/10 bg-card shadow-xl sm:left-auto sm:w-96 md:bottom-[5.75rem] md:right-6"
+          className="fixed bottom-5 left-4 right-4 z-50 flex max-h-[70vh] flex-col overflow-hidden rounded-2xl border border-slate/10 bg-card shadow-xl sm:left-auto sm:w-96 md:bottom-6 md:right-6"
         >
           <div className="flex items-start justify-between gap-3 bg-navy px-4 py-3 text-white">
             <div>

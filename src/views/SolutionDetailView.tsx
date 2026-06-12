@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CTABand from "@/components/CTABand";
 import FAQ from "@/components/FAQ";
 import FeatureGrid from "@/components/FeatureGrid";
@@ -51,6 +52,19 @@ export default function SolutionDetailView({
               </a>
             </div>
           </Reveal>
+          {solution.siteUrl && (
+            <Reveal delay={0.28}>
+              <a
+                href={solution.siteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-1.5 font-semibold text-blue transition-colors duration-200 hover:underline"
+              >
+                {UI[lang].seeItLive(solution.name)}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </Reveal>
+          )}
 
           {page.highlight && (
             <Reveal delay={0.3}>
@@ -85,6 +99,35 @@ export default function SolutionDetailView({
           </Reveal>
         </div>
       </section>
+
+      {/* Real product screenshots (personal details pixelated) */}
+      {page.screenshots && page.screenshots.length > 0 && (
+        <section className="py-16 md:py-24">
+          <div className="container-site max-w-4xl space-y-14 md:space-y-16">
+            {page.screenshots.map((shot) => (
+              <div key={shot.src}>
+                <Reveal>
+                  <div className="overflow-hidden rounded-2xl border border-slate/10 bg-card p-2 shadow-card sm:p-3">
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt}
+                      width={shot.width}
+                      height={shot.height}
+                      unoptimized
+                      className="w-full rounded-xl"
+                    />
+                  </div>
+                </Reveal>
+                <Reveal delay={0.08}>
+                  <p className="mt-6 text-center text-sm font-medium text-slate">
+                    {shot.caption}
+                  </p>
+                </Reveal>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <FAQ title={UI[lang].quickQuestions} items={page.miniFaq} />
 

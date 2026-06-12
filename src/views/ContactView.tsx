@@ -65,18 +65,31 @@ export default function ContactView({ lang }: { lang: Lang }) {
             <div className="h-full rounded-2xl border border-slate/10 bg-card p-7">
               <p className="eyebrow">{t.visitUs}</p>
               <p className="mt-3 font-display text-xl font-bold text-heading">
-                {SITE.location}
+                {SITE.address}
               </p>
-              {/* TODO (Albert): exact street address + map pin */}
-              <p className="mt-3 text-sm text-slate/60">{t.addressTodo}</p>
+              <p className="mt-1 text-sm text-slate">{SITE.location}</p>
+              <a
+                href={SITE.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-blue hover:underline"
+              >
+                {t.openMap}
+                <span aria-hidden="true">↗</span>
+              </a>
             </div>
           </Reveal>
 
-          {/* Email; pending confirmation */}
+          {/* Email */}
           <Reveal delay={0.24} className="md:col-span-2">
-            <div className="rounded-2xl border border-dashed border-slate/25 bg-surface-2 p-6 text-center text-sm text-slate/60">
-              {/* TODO (Albert): confirm the email address (old site obfuscated it); then add a card + optional mailto form here */}
-              {t.emailTodo}
+            <div className="rounded-2xl border border-slate/10 bg-card p-7 text-center">
+              <p className="eyebrow">{t.emailUs}</p>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="mt-3 inline-block font-display text-xl font-bold text-heading transition-colors hover:text-blue"
+              >
+                {SITE.email}
+              </a>
             </div>
           </Reveal>
         </div>

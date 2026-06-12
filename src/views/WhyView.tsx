@@ -1,6 +1,8 @@
 import CTABand from "@/components/CTABand";
+import FieldGallery from "@/components/FieldGallery";
 import Reveal from "@/components/Reveal";
 import { FINAL_CTA } from "@/content/home";
+import { WHY_GALLERY } from "@/content/photos";
 import { SITE } from "@/content/site";
 import { WHY } from "@/content/why";
 import type { Lang } from "@/lib/i18n";
@@ -70,6 +72,9 @@ export default function WhyView({ lang }: { lang: Lang }) {
           </ul>
         </div>
       </section>
+
+      {/* Real field photos with clients */}
+      <FieldGallery className="bg-surface-2" {...WHY_GALLERY[lang]} />
 
       {/* Team; placeholders until real photos provided */}
       <section className="bg-surface-2 py-16 md:py-24">

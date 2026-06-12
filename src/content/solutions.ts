@@ -23,6 +23,14 @@ export type Solution = {
   audience: string;
   features: string[];
   waPrefill: string;
+  /** Live product site, when the solution has a public one. */
+  siteUrl?: string;
+};
+
+/** Public product sites (language-independent). */
+export const SOLUTION_SITES: Partial<Record<SolutionSlug, string>> = {
+  smartpharmacy: "https://pharmacy.ipab.co.tz/",
+  smarthotels: "https://smarthotels.ipab.co.tz/",
 };
 
 /**
@@ -60,6 +68,7 @@ export const SOLUTIONS: Record<Lang, Solution[]> = {
         "Daily summary to the owner's phone",
       ],
       waPrefill: WA_PREFILLS.en.smartpharmacy,
+      siteUrl: SOLUTION_SITES.smartpharmacy,
     },
     {
       slug: "smarthotels",
@@ -75,6 +84,7 @@ export const SOLUTIONS: Record<Lang, Solution[]> = {
         "Owner's dashboard",
       ],
       waPrefill: WA_PREFILLS.en.smarthotels,
+      siteUrl: SOLUTION_SITES.smarthotels,
     },
     {
       slug: "smartcolleges",
@@ -123,6 +133,7 @@ export const SOLUTIONS: Record<Lang, Solution[]> = {
         "Muhtasari wa kila siku kwenye simu ya mmiliki",
       ],
       waPrefill: WA_PREFILLS.sw.smartpharmacy,
+      siteUrl: SOLUTION_SITES.smartpharmacy,
     },
     {
       slug: "smarthotels",
@@ -138,6 +149,7 @@ export const SOLUTIONS: Record<Lang, Solution[]> = {
         "Dashibodi ya mmiliki",
       ],
       waPrefill: WA_PREFILLS.sw.smarthotels,
+      siteUrl: SOLUTION_SITES.smarthotels,
     },
     {
       slug: "smartcolleges",

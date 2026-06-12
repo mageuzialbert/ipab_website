@@ -15,8 +15,8 @@ export const CONTACT: Record<
     whatsappBody: string;
     callUs: string;
     visitUs: string;
-    addressTodo: string;
-    emailTodo: string;
+    openMap: string;
+    emailUs: string;
   }
 > = {
   en: {
@@ -28,9 +28,8 @@ export const CONTACT: Record<
       "Fastest reply. Tell us what's leaking; stock, sales, or customers; and we'll tell you what we'd fix.",
     callUs: "Call us",
     visitUs: "Visit us",
-    addressTodo: "Exact address & map pin; TODO, to be provided",
-    emailTodo:
-      "Email address; TODO, being confirmed. Use WhatsApp or phone for now.",
+    openMap: "Open in Google Maps",
+    emailUs: "Email us",
   },
   sw: {
     eyebrow: "Wasiliana",
@@ -38,11 +37,10 @@ export const CONTACT: Record<
     sub: "WhatsApp ndiyo njia ya haraka zaidi ya kutufikia; watu halisi Dar es Salaam, si foleni ya tiketi.",
     whatsappHeading: "Ongea nasi WhatsApp",
     whatsappBody:
-      "Majibu ya haraka. Tuambie kinachovuja; stoo, mauzo, au wateja; tutakuambia tungerekebisha nini.",
+      "Majibu ya haraka. Tuambie kinachopotea; stoo, mauzo, au wateja; tutakuambia tungerekebisha nini.",
     callUs: "Tupigie",
     visitUs: "Tutembelee",
-    addressTodo: "Anwani kamili na ramani; TODO, italetwa baadaye",
-    emailTodo:
-      "Barua pepe; TODO, inathibitishwa. Tumia WhatsApp au simu kwa sasa.",
+    openMap: "Fungua ramani ya Google",
+    emailUs: "Tuandikie barua pepe",
   },
 };

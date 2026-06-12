@@ -9,13 +9,15 @@ export const SITE = {
   taglineSw: "Tunatengeneza Biashara kwa Teknolojia",
   url: "https://ipab.co.tz",
   location: "Dar es Salaam, Tanzania",
+  /** Area/street line shown above `location` on the contact page. */
+  address: "Magomeni Usalama",
+  mapUrl: "https://maps.app.goo.gl/5k3CJ4jRcdAtsv5TA",
   hours: "Mon–Sat 8:00–17:00",
   hoursSw: "Jumatatu–Jumamosi 8:00–17:00",
   phones: ["+255 743 525 913", "+255 759 561 311"],
   whatsappNumber: "255759561311",
   instagram: "https://instagram.com/ipab_international",
-  // TODO: confirm email address (old site obfuscated it)
-  email: null as string | null,
+  email: "info@ipab.co.tz",
 } as const;
 
 /**
