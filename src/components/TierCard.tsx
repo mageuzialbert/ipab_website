@@ -13,8 +13,10 @@ export default function TierCard({
 
   return (
     <div
-      className={`relative flex h-full flex-col rounded-2xl border bg-card p-7 ${
-        tier.popular ? "border-blue shadow-lift" : "border-slate/10"
+      className={`relative flex h-full flex-col rounded-2xl p-7 ${
+        tier.popular
+          ? "gradient-border-card shadow-lift"
+          : "border border-slate/10 bg-card"
       }`}
     >
       {tier.popular && (

@@ -4,7 +4,7 @@ import WhyView from "@/views/WhyView";
 export const metadata: Metadata = {
   title: "Why iPAB",
   description:
-    "iPAB started by sitting inside Tanzanian businesses and building what stops the bleeding. Today 1,220+ businesses run on iPAB every day.",
+    "iPAB shapes proven systems around how your business runs, with local support until it works. 1,220+ Tanzanian businesses run on iPAB, sharpened by 9,000+ daily users.",
   alternates: {
     canonical: "/why-ipab",
     languages: { en: "/why-ipab", sw: "/sw/why-ipab" },

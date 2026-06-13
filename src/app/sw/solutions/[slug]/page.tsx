@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const solution = getSolution("sw", slug);
   return {
     title: solution.name,
-    description: `${solution.tagline} ${solution.name}; kwa ${solution.audience.toLowerCase()}. Inafungwa na iPAB Tanzania, pamoja na mafunzo ya wafanyakazi.`,
+    description: `${solution.tagline} ${solution.name}; kwa ${solution.audience.toLowerCase()}. Imeundwa, kufungwa, na kusaidiwa na iPAB mpaka ifanikiwe.`,
     alternates: {
       canonical: `/sw/solutions/${slug}`,
       languages: {

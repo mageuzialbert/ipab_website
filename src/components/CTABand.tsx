@@ -17,7 +17,15 @@ export default function CTABand({
   buttonLabel?: string;
 }) {
   return (
-    <section className="dot-grid-dark border-b border-white/10 bg-navy py-16 md:py-24">
+    <section className="relative isolate overflow-hidden border-b border-white/10 bg-navy py-16 md:py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 grid-lines-dark mask-fade-bottom"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 glow-blue opacity-50"
+      />
       <div className="container-site max-w-3xl text-center">
         <Reveal>
           <h2 className="text-balance font-display text-h2-sm font-bold text-white md:text-h2">

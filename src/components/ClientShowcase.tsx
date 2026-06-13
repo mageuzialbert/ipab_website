@@ -4,8 +4,9 @@ import { SHOWCASE } from "@/content/clients";
 import type { Lang } from "@/lib/i18n";
 
 /**
- * Client showcase in the testimonials slot (until real quotes arrive):
- * heading + logos drifting left → right on a transparent background.
+ * Client showcase fallback for the testimonials slot (only used if the
+ * testimonial list is ever empty): heading + logos drifting on a
+ * transparent background.
  */
 export default function ClientShowcase({ lang = "en" }: { lang?: Lang }) {
   const t = SHOWCASE[lang];

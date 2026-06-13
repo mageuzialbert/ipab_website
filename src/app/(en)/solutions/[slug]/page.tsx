@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const solution = getSolution("en", slug);
   return {
     title: solution.name,
-    description: `${solution.tagline} ${solution.name}; for ${solution.audience.toLowerCase()}. Installed, with staff training, by iPAB in Tanzania.`,
+    description: `${solution.tagline} ${solution.name}; for ${solution.audience.toLowerCase()}. Customized, installed, and supported by iPAB until it works.`,
     alternates: {
       canonical: `/solutions/${slug}`,
       languages: {

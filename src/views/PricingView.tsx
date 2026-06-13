@@ -68,7 +68,11 @@ export default function PricingView({ lang }: { lang: Lang }) {
       </section>
 
       {/* Tiers */}
-      <section className="bg-surface-2 py-16 md:py-24">
+      <section className="relative isolate bg-surface-2 py-16 md:py-24">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 grid-lines-light mask-fade-top"
+        />
         <div className="container-site">
           <Reveal>
             <h2 className="text-balance text-center font-display text-h2-sm font-bold text-heading md:text-h2">

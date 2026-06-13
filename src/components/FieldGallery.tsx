@@ -2,7 +2,12 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import type { FieldPhoto } from "@/content/photos";
 
-/** Real field-photo band; lazy-loaded, always below the fold. */
+/**
+ * Real field-photo band; lazy-loaded, always below the fold.
+ * Photo cards scroll right-to-left in a continuous marquee (paused on
+ * hover, stilled under prefers-reduced-motion). The row is rendered
+ * twice and each copy slides by its own width, so the loop is seamless.
+ */
 export default function FieldGallery({
   eyebrow,
   heading,
@@ -27,25 +32,36 @@ export default function FieldGallery({
             {heading}
           </h2>
         </Reveal>
-        <div className="mt-10 grid gap-5 md:mt-14 md:grid-cols-3">
-          {photos.map((photo, i) => (
-            <Reveal key={photo.src} delay={i * 0.08} className="h-full">
-              <figure className="h-full overflow-hidden rounded-2xl border border-slate/10 bg-card p-2 shadow-card">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  width={photo.width}
-                  height={photo.height}
-                  unoptimized
-                  className="aspect-[4/3] w-full rounded-xl object-cover"
-                />
-                <figcaption className="px-2 py-3 text-center text-sm font-medium text-slate">
-                  {photo.caption}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal delay={0.16}>
+          <div className="group mt-10 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] md:mt-14">
+            {[0, 1].map((copy) => (
+              <div
+                key={copy}
+                aria-hidden={copy === 1}
+                className="animate-marquee flex min-w-max flex-none items-stretch gap-5 pr-5 [animation-duration:45s] group-hover:[animation-play-state:paused]"
+              >
+                {photos.map((photo) => (
+                  <figure
+                    key={photo.src}
+                    className="w-72 overflow-hidden rounded-2xl border border-slate/10 bg-card p-2 shadow-card sm:w-96"
+                  >
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      width={photo.width}
+                      height={photo.height}
+                      unoptimized
+                      className="aspect-[4/3] w-full rounded-xl object-cover"
+                    />
+                    <figcaption className="px-2 py-3 text-center text-sm font-medium text-slate">
+                      {photo.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

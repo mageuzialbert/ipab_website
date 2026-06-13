@@ -25,13 +25,22 @@ Rules: light site with strategic dark-navy sections (hero optional, stats, final
 ## Spacing & layout
 - Container max-w 1200px. Section padding-y: 96px desktop / 64px mobile.
 - 8px spacing grid. Generous whitespace — when in doubt, add space.
-- Cards: radius 16px, border 1px slate/10%, shadow only on hover (lift 4px, 0.2s ease). No glows, no gradient borders.
+- Cards: radius 16px, border 1px slate/10%, shadow only on hover (lift 4px, 0.2s ease).
+- Glows & gradients — allowed ONLY in two places, never elsewhere:
+  1. Dark navy sections (hero, stat bar, final CTA band): one or two static radial
+     blue glows (<30% peak opacity) + a masked 1px line grid (white at ~5%).
+     Pure CSS, no canvas, nothing animated except entrances.
+  2. Featured cards (max one per section, e.g. SmartPoint): a 1px gradient hairline
+     border (blue→amber). Body-section cards may use a mouse-following spotlight
+     hover (radial-gradient at cursor, ≤7% opacity).
+  Everything else stays flat. Green remains WhatsApp-only. No glow may ever compete
+  with the WhatsApp CTA for attention.
 - Buttons: radius 12px, py-3.5 px-6, semibold. Primary = green (WhatsApp icon + label), secondary = navy outline.
 
 ## Imagery
 - NO stock photos, NO 3D illustration packs, NO template shapes/blobs.
 - Product UI mockups built in code: rounded-2xl window frame, subtle shadow, simplified dashboard (sales numbers in TZS, stock alerts, attendance %) — readable but stylized.
-- Subtle dot-grid or thin-line pattern allowed on dark sections at <5% opacity.
+- Subtle dot-grid or thin-line pattern allowed on dark sections at <5% opacity. Light sections may carry a 1px line grid at ≤7% slate, masked to fade out.
 - Real client logos grayscale at 60% opacity, full on hover.
 
 ## Motion

@@ -7,7 +7,15 @@ export default function StatBar({ lang = "en" }: { lang?: Lang }) {
   const heading = STATS_HEADING[lang];
 
   return (
-    <section className="dot-grid-dark bg-navy py-16 md:py-24">
+    <section className="relative isolate overflow-hidden bg-navy py-16 md:py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 grid-lines-dark mask-fade-center"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[480px] w-[800px] -translate-x-1/2 glow-blue opacity-60"
+      />
       <div className="container-site">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>

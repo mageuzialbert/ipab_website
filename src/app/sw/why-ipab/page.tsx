@@ -4,7 +4,7 @@ import WhyView from "@/views/WhyView";
 export const metadata: Metadata = {
   title: "Kwa nini iPAB",
   description:
-    "iPAB ilianza kwa kukaa ndani ya biashara za Tanzania na kujenga kinachozuia hasara. Leo biashara 1,220+ zinatumia iPAB kila siku.",
+    "iPAB inaunda mifumo iliyothibitishwa kulingana na jinsi biashara yako inavyoendeshwa, na msaada wa karibu mpaka ufanikiwe. Biashara 1,220+ za Tanzania zinatumia iPAB, zikiboreshwa na watumiaji 9,000+ wa kila siku.",
   alternates: {
     canonical: "/sw/why-ipab",
     languages: { en: "/why-ipab", sw: "/sw/why-ipab" },

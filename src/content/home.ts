@@ -102,11 +102,11 @@ export const SOLUTION_INTRO: Record<Lang, { heading: string; body: string }> =
   {
     en: {
       heading: "One system. Full control.",
-      body: "We don't sell you an app and disappear. We study your business, install the right system, train your people, and stay until it works.",
+      body: "We don't sell you an app and disappear. We study your business, shape the system around how you work, train your people, and stay until it works.",
     },
     sw: {
       heading: "Mfumo mmoja. Udhibiti kamili.",
-      body: "Hatukuuzii app halafu tukatoweka. Tunaisoma biashara yako, tunafunga mfumo unaofaa, tunafundisha watu wako, na tunabaki mpaka ufanikiwe.",
+      body: "Hatukuuzii app halafu tukatoweka. Tunaisoma biashara yako, tunaunda mfumo kulingana na jinsi unavyofanya kazi, tunafundisha watu wako, na tunabaki mpaka ufanikiwe.",
     },
   };
 

@@ -14,7 +14,9 @@ export default function StatCounter({ stat }: { stat: Stat }) {
             {stat.prefix}
           </span>
         )}
-        <span ref={ref}>{value.toLocaleString("en-US")}</span>
+        <span ref={ref} className="text-gradient-stat">
+          {value.toLocaleString("en-US")}
+        </span>
         {stat.suffix && <span className="text-amber">{stat.suffix}</span>}
       </p>
       <p className="mt-3 font-medium text-white/80">{stat.label}</p>

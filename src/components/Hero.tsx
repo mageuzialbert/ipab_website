@@ -1,6 +1,5 @@
 import DashboardMockup from "@/components/DashboardMockup";
 import Reveal from "@/components/Reveal";
-import SmokeTrail from "@/components/SmokeTrail";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
 import { HERO } from "@/content/home";
 import type { Lang } from "@/lib/i18n";
@@ -10,11 +9,20 @@ export default function Hero({ lang = "en" }: { lang?: Lang }) {
   const [h1Before, h1After] = hero.h1.split(hero.h1Highlight);
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Soft accent behind the mockup; subtle, never a gradient wash */}
+    /* `dark` flips every semantic token inside, so the hero is navy in both
+       site themes and DashboardMockup adapts untouched */
+    <section className="dark relative isolate overflow-hidden border-b border-white/10 bg-navy">
       <div
         aria-hidden="true"
-        className="absolute -right-40 top-10 -z-10 size-[480px] rounded-full bg-blue/5 blur-3xl"
+        className="pointer-events-none absolute inset-0 -z-10 grid-lines-dark mask-fade-top"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 top-8 -z-10 size-[640px] glow-blue"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-40 -left-40 -z-10 size-[420px] glow-blue opacity-50"
       />
 
       <div className="container-site grid items-center gap-12 py-14 md:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
@@ -50,9 +58,6 @@ export default function Hero({ lang = "en" }: { lang?: Lang }) {
           <DashboardMockup />
         </Reveal>
       </div>
-
-      {/* Cursor smoke-trail; paints over the hero, never blocks clicks */}
-      <SmokeTrail />
     </section>
   );
 }

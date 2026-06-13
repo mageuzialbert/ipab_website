@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import SolutionCard from "@/components/SolutionCard";
+import SpotlightCard from "@/components/SpotlightCard";
 import { SOLUTION_INTRO } from "@/content/home";
 import { SOLUTIONS } from "@/content/solutions";
 import type { Lang } from "@/lib/i18n";
@@ -8,7 +9,11 @@ export default function SolutionSection({ lang = "en" }: { lang?: Lang }) {
   const intro = SOLUTION_INTRO[lang];
 
   return (
-    <section className="bg-surface-2 py-16 md:py-24">
+    <section className="relative isolate bg-surface-2 py-16 md:py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 grid-lines-light mask-fade-top"
+      />
       <div className="container-site">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
@@ -24,7 +29,13 @@ export default function SolutionSection({ lang = "en" }: { lang?: Lang }) {
         <div className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-14 lg:grid-cols-4">
           {SOLUTIONS[lang].map((solution, i) => (
             <Reveal key={solution.slug} delay={i * 0.08} className="h-full">
-              <SolutionCard solution={solution} lang={lang} />
+              <SpotlightCard>
+                <SolutionCard
+                  solution={solution}
+                  lang={lang}
+                  featured={i === 0}
+                />
+              </SpotlightCard>
             </Reveal>
           ))}
         </div>

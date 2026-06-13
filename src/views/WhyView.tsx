@@ -1,9 +1,11 @@
 import CTABand from "@/components/CTABand";
 import FieldGallery from "@/components/FieldGallery";
 import Reveal from "@/components/Reveal";
+import TeamGrid from "@/components/TeamGrid";
 import { FINAL_CTA } from "@/content/home";
 import { WHY_GALLERY } from "@/content/photos";
 import { SITE } from "@/content/site";
+import { TEAM } from "@/content/team";
 import { WHY } from "@/content/why";
 import type { Lang } from "@/lib/i18n";
 
@@ -37,7 +39,15 @@ export default function WhyView({ lang }: { lang: Lang }) {
       </section>
 
       {/* Centerpiece quote */}
-      <section className="dot-grid-dark bg-navy py-20 md:py-28">
+      <section className="relative isolate overflow-hidden bg-navy py-20 md:py-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 grid-lines-dark mask-fade-center"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 glow-blue opacity-50"
+        />
         <div className="container-site max-w-4xl text-center">
           <Reveal>
             <blockquote className="text-balance font-display text-3xl font-bold leading-tight tracking-tight text-white md:text-5xl">
@@ -76,30 +86,10 @@ export default function WhyView({ lang }: { lang: Lang }) {
       {/* Real field photos with clients */}
       <FieldGallery className="bg-surface-2" {...WHY_GALLERY[lang]} />
 
-      {/* Team; placeholders until real photos provided */}
+      {/* Team */}
       <section className="bg-surface-2 py-16 md:py-24">
-        <div className="container-site max-w-4xl">
-          <Reveal>
-            <h2 className="text-balance text-center font-display text-h2-sm font-bold text-heading md:text-h2">
-              {why.teamHeading}
-            </h2>
-          </Reveal>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-14">
-            {/* TODO (Albert): founder photo + 2-line bio */}
-            <Reveal>
-              <div className="flex h-56 flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-slate/25 bg-card text-sm text-slate/60">
-                <span className="font-medium">{why.founderPlaceholder}</span>
-                <span className="text-xs">{why.todoNote}</span>
-              </div>
-            </Reveal>
-            {/* TODO (Albert): team photo */}
-            <Reveal delay={0.08}>
-              <div className="flex h-56 flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-slate/25 bg-card text-sm text-slate/60">
-                <span className="font-medium">{why.teamPlaceholder}</span>
-                <span className="text-xs">{why.todoNote}</span>
-              </div>
-            </Reveal>
-          </div>
+        <div className="container-site max-w-5xl">
+          <TeamGrid {...TEAM[lang]} />
 
           {/* Where we work + Instagram */}
           <Reveal delay={0.16}>

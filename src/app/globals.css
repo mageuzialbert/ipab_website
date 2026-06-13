@@ -147,3 +147,105 @@ html {
   );
   background-size: 24px 24px;
 }
+
+/* ── Tech-premium layers (see DESIGN_SYSTEM.md "Glows & gradients") ──────
+   Grid + glow layers go on aria-hidden, pointer-events-none divs inside
+   `relative isolate` dark sections. Pure CSS — no canvas, no rAF. */
+
+/* 1px line grid for navy sections (hero, stat bar, CTA band) */
+@utility grid-lines-dark {
+  background-image: linear-gradient(
+      to right,
+      rgb(255 255 255 / 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 6rem 5rem;
+}
+
+/* Faint line grid for light sections; slate-based so it adapts in dark mode */
+@utility grid-lines-light {
+  background-image: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-slate) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-slate) 7%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 6rem 5rem;
+}
+
+/* Masks that fade a grid layer out — pair with grid-lines-* */
+@utility mask-fade-top {
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 50% at 50% 0%,
+    black 70%,
+    transparent 110%
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 50% at 50% 0%,
+    black 70%,
+    transparent 110%
+  );
+}
+
+@utility mask-fade-bottom {
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 50% at 50% 100%,
+    black 70%,
+    transparent 110%
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 50% at 50% 100%,
+    black 70%,
+    transparent 110%
+  );
+}
+
+@utility mask-fade-center {
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    black 60%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    black 60%,
+    transparent 100%
+  );
+}
+
+/* Static radial blue glow accent for dark sections, <30% peak opacity */
+@utility glow-blue {
+  background: radial-gradient(
+    closest-side,
+    rgb(27 109 243 / 0.28),
+    transparent 70%
+  );
+}
+
+/* White→light-blue gradient text for stat numbers on navy */
+@utility text-gradient-stat {
+  background-image: linear-gradient(180deg, #ffffff 30%, #9cc0fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 1px blue→amber hairline border for featured cards. Supplies its own
+   card fill — do not combine with bg-card. */
+@utility gradient-border-card {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-card), var(--color-card)) padding-box,
+    linear-gradient(
+        135deg,
+        rgb(27 109 243 / 0.45),
+        rgb(27 109 243 / 0.08) 45%,
+        rgb(245 166 35 / 0.35)
+      )
+      border-box;
+}

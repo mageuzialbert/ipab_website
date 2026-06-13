@@ -6,14 +6,21 @@ import { UI, localeHref, type Lang } from "@/lib/i18n";
 export default function SolutionCard({
   solution,
   lang = "en",
+  featured = false,
 }: {
   solution: Solution;
   lang?: Lang;
+  /** Flagship treatment: gradient hairline border (max one per section) */
+  featured?: boolean;
 }) {
   return (
     <Link
       href={localeHref(lang, `/solutions/${solution.slug}`)}
-      className="group flex h-full flex-col rounded-2xl border border-slate/10 bg-card p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-lift"
+      className={`group flex h-full flex-col rounded-2xl p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-lift ${
+        featured
+          ? "gradient-border-card"
+          : "border border-slate/10 bg-card"
+      }`}
     >
       <span className="flex size-11 items-center justify-center rounded-xl bg-blue/10 text-blue">
         <SolutionIcon slug={solution.slug} className="size-5.5" />

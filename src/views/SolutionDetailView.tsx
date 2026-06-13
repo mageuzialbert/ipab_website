@@ -28,7 +28,11 @@ export default function SolutionDetailView({
   return (
     <>
       {/* Outcome hero */}
-      <section className="py-16 md:py-24">
+      <section className="relative isolate py-16 md:py-24">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 grid-lines-light mask-fade-top"
+        />
         <div className="container-site max-w-3xl text-center">
           <Reveal>
             <p className="eyebrow">{page.heroEyebrow}</p>
@@ -68,7 +72,7 @@ export default function SolutionDetailView({
 
           {page.highlight && (
             <Reveal delay={0.3}>
-              <div className="mt-12 rounded-2xl border border-blue/20 bg-blue/5 p-6 text-left sm:p-7">
+              <div className="mt-12 rounded-2xl gradient-border-card p-6 text-left sm:p-7">
                 <p className="font-display text-lg font-bold text-heading">
                   {page.highlight.title}
                 </p>

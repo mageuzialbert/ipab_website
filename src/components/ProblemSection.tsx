@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import SpotlightCard from "@/components/SpotlightCard";
 import { PROBLEMS } from "@/content/home";
 import type { Lang } from "@/lib/i18n";
 
@@ -35,7 +36,8 @@ export default function ProblemSection({ lang = "en" }: { lang?: Lang }) {
         <div className="mt-10 grid gap-5 md:mt-14 md:grid-cols-3">
           {problems.cards.map((card, i) => (
             <Reveal key={card.title} delay={i * 0.08}>
-              <div className="h-full rounded-2xl border border-slate/10 bg-card p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-lift">
+              <SpotlightCard spotColor="rgb(27 109 243 / 0.06)">
+                <div className="h-full rounded-2xl border border-slate/10 bg-card p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-lift">
                 <span className="flex size-11 items-center justify-center rounded-xl bg-heading/5 text-heading">
                   <svg
                     viewBox="0 0 24 24"
@@ -53,8 +55,9 @@ export default function ProblemSection({ lang = "en" }: { lang?: Lang }) {
                 <h3 className="mt-5 font-display text-h3 font-bold text-heading">
                   {card.title}
                 </h3>
-                <p className="mt-2 text-slate">{card.body}</p>
-              </div>
+                  <p className="mt-2 text-slate">{card.body}</p>
+                </div>
+              </SpotlightCard>
             </Reveal>
           ))}
         </div>

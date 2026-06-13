@@ -27,7 +27,15 @@ export default function ContactView({ lang }: { lang: Lang }) {
         <div className="mt-12 grid gap-5 md:mt-16 md:grid-cols-2">
           {/* WhatsApp; primary */}
           <Reveal className="md:col-span-2">
-            <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-navy p-8 text-center md:flex-row md:justify-between md:p-10 md:text-left">
+            <div className="relative isolate flex flex-col items-center gap-5 overflow-hidden rounded-2xl border border-white/10 bg-navy p-8 text-center md:flex-row md:justify-between md:p-10 md:text-left">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -z-10 grid-lines-dark mask-fade-center"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-20 -top-20 -z-10 size-[320px] glow-blue opacity-60"
+              />
               <div>
                 <h2 className="font-display text-h3 font-bold text-white">
                   {t.whatsappHeading}
