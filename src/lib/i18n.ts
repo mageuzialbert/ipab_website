@@ -55,6 +55,7 @@ export const UI = {
         "We don't build apps, websites, or systems. We solve business challenges with technology.",
       forClients: "For our clients",
       tagline: "We fix businesses with technology.",
+      privacy: "Privacy Policy",
     },
   },
   sw: {
@@ -86,6 +87,7 @@ export const UI = {
         "Hatutengenezi app, tovuti, wala mifumo. Tunatatua changamoto za biashara kwa teknolojia.",
       forClients: "Kwa wateja wetu",
       tagline: "Tunatengeneza biashara kwa teknolojia.",
+      privacy: "Sera ya Faragha",
     },
   },
 } as const;

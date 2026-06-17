@@ -122,7 +122,16 @@ export default function Footer({ lang = "en" }: { lang?: Lang }) {
             © {new Date().getFullYear()} {SITE.legalName}. {SITE.location}.
           </p>
           {/* TODO: add TIN number when provided */}
-          <p>{ui.footer.tagline}</p>
+          <div className="flex items-center gap-4">
+            <Link
+              href={localeHref(lang, "/privacy")}
+              className="transition-colors hover:text-white"
+            >
+              {ui.footer.privacy}
+            </Link>
+            <span aria-hidden="true">·</span>
+            <p>{ui.footer.tagline}</p>
+          </div>
         </div>
       </div>
     </footer>
