@@ -2,7 +2,7 @@ import type { Lang } from "@/lib/i18n";
 
 /**
  * Privacy Policy copy. Required by Meta/WhatsApp Business for the number
- * 255759561311 used across the website and all iPAB products.
+ * 255776653898 used across the website and all iPAB products.
  * English is the source of truth; Swahili drafted in translation;
  * TODO (Albert): review the Swahili before launch.
  */
@@ -28,7 +28,7 @@ export const PRIVACY: Record<Lang, PrivacyContent> = {
     updated: "Last updated: 17 June 2026",
     intro: [
       "iPAB International Limited (“iPAB”, “we”, “us”) builds business management systems — SmartPoint, SmartPharmacy, SmartHotels and SmartColleges — and provides related cloud services to businesses in Tanzania. This policy explains what information we collect, how we use it, and the choices you have.",
-      "It applies to our website, our products, and to the WhatsApp Business number +255 759 561 311 that we use to talk with customers and prospects across all iPAB products.",
+      "It applies to our website, our products, and to the WhatsApp Business number +255 776 653 898 that we use to talk with customers and prospects across all iPAB products.",
     ],
     sections: [
       {
@@ -116,7 +116,7 @@ export const PRIVACY: Record<Lang, PrivacyContent> = {
           "If you have questions about this policy or your information, contact us:",
         ],
         list: [
-          "WhatsApp / phone: +255 759 561 311 · +255 743 525 913",
+          "WhatsApp / phone: +255 776 653 898",
           "Email: info@ipab.co.tz",
           "Address: Magomeni Usalama, Dar es Salaam, Tanzania",
         ],
@@ -129,7 +129,7 @@ export const PRIVACY: Record<Lang, PrivacyContent> = {
     updated: "Imesasishwa mara ya mwisho: 17 Juni 2026",
     intro: [
       "iPAB International Limited (“iPAB”, “sisi”) hutengeneza mifumo ya kusimamia biashara — SmartPoint, SmartPharmacy, SmartHotels na SmartColleges — na hutoa huduma za mtandao kwa biashara nchini Tanzania. Sera hii inaeleza taarifa tunazokusanya, jinsi tunavyozitumia, na chaguo ulizonazo.",
-      "Inahusu tovuti yetu, bidhaa zetu, na namba ya WhatsApp Business +255 759 561 311 tunayoitumia kuongea na wateja na watarajiwa katika bidhaa zote za iPAB.",
+      "Inahusu tovuti yetu, bidhaa zetu, na namba ya WhatsApp Business +255 776 653 898 tunayoitumia kuongea na wateja na watarajiwa katika bidhaa zote za iPAB.",
     ],
     sections: [
       {
@@ -217,7 +217,7 @@ export const PRIVACY: Record<Lang, PrivacyContent> = {
           "Kama una maswali kuhusu sera hii au taarifa zako, wasiliana nasi:",
         ],
         list: [
-          "WhatsApp / simu: +255 759 561 311 · +255 743 525 913",
+          "WhatsApp / simu: +255 776 653 898",
           "Barua pepe: info@ipab.co.tz",
           "Anwani: Magomeni Usalama, Dar es Salaam, Tanzania",
         ],

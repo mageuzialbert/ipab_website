@@ -25,5 +25,5 @@ Then tell Claude Code:
 1. Replace TODOs in CONTENT.md: real client logos (with permission), 3 real testimonials, email address, exact office address, pricing tier inclusions, billing methods, lock-in policy.
 2. Provide logo files + confirm exact brand blue.
 3. Review the draft pricing table — it's a proposal, not final.
-4. Confirm WhatsApp number 0743 525 913 is the business line that will answer leads fast — speed of reply is half the conversion.
+4. Confirm WhatsApp number +255 776 653 898 is the business line that will answer leads fast — speed of reply is half the conversion.
 5. Deploy: Vercel (free) → point ipab.co.tz DNS. Claude Code will write deploy steps in the project README.

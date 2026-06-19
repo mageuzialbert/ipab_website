@@ -14,8 +14,8 @@ export const SITE = {
   mapUrl: "https://maps.app.goo.gl/5k3CJ4jRcdAtsv5TA",
   hours: "Mon–Sat 8:00–17:00",
   hoursSw: "Jumatatu–Jumamosi 8:00–17:00",
-  phones: ["+255 743 525 913", "+255 759 561 311"],
-  whatsappNumber: "255759561311",
+  phones: ["+255 776 653 898"],
+  whatsappNumber: "255776653898",
   instagram: "https://instagram.com/ipab_international",
   email: "info@ipab.co.tz",
 } as const;

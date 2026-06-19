@@ -4,7 +4,7 @@ Use this copy verbatim unless marked TODO. Never invent client names, numbers, o
 
 ## Brand facts
 - Legal name: iPAB International Limited. Dar es Salaam, Tanzania. Hours: Mon–Sat 8:00–17:00.
-- Phones: +255 743 525 913 · +255 759 561 311. WhatsApp: 255759561311.
+- Phone: +255 776 653 898 (company line). WhatsApp: 255776653898.
 - Instagram: instagram.com/ipab_international. Email: TODO confirm (old site obfuscated it).
 - Proof (updated June 2026): 1,220+ paying subscribed businesses, 9,000+ daily active users, 57K invoices created daily, TZS 600M in daily transactions across the platform; incl. highly reputable businesses; deployed in colleges, hotels, pharmacies, wholesalers.
 
@@ -100,7 +100,7 @@ TODO: founder photo + 2-line bio, team photo, 2–3 named client logos with perm
 ## Contact page
 
 H1: Talk to a human. Today.
-Cards: WhatsApp (primary, green) · Call +255 743 525 913 / +255 759 561 311 · Email TODO · Visit: Dar es Salaam (TODO exact address/map pin) · Mon–Sat 8:00–17:00.
+Cards: WhatsApp (primary, green) · Call +255 776 653 898 · Email TODO · Visit: Dar es Salaam (TODO exact address/map pin) · Mon–Sat 8:00–17:00.
 
 ## SEO
 

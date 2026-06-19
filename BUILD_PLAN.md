@@ -45,7 +45,7 @@ Template sections: outcome hero with solution-specific WhatsApp prefill → "bui
 ## Phase 4 — Pricing, Why iPAB, Contact
 - **/pricing**: install fee explainer (TZS 50K–1M depending on customization & training) + subscription tiers 15K / 30K / 50K / 100K / Custom, billed from 3 months. Tier table: what's included per tier (from CONTENT.md). Every tier CTA = WhatsApp with tier-specific prefill. FAQ: "Why an installation fee?", "Can I cancel?", hardware availability.
 - **/why-ipab**: story ("we fix broken businesses"), the no-apps positioning statement as a centerpiece quote, values, team placeholder, Instagram embed/link, map/area served.
-- **/contact**: WhatsApp primary card, phone numbers (+255 743 525 913, +255 759 561 311), email, Dar es Salaam, hours Mon–Sat 8:00–17:00. Optional simple mailto form — no backend.
+- **/contact**: WhatsApp primary card, phone number (+255 776 653 898), email, Dar es Salaam, hours Mon–Sat 8:00–17:00. Optional simple mailto form — no backend.
 
 ## Phase 5 — Polish & verify
 1. Motion: fade/slide-up on scroll (Framer Motion, `once: true`, subtle — 12px, 0.4s), counter animations, hover lift on cards. Nothing that delays content paint.
