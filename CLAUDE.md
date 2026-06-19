@@ -18,7 +18,7 @@ Proof: 1,220+ paying subscribed businesses, 9,000+ daily active users, 57K invoi
 
 A **premium, high-converting, trustable** site — the best tech company site in Tanzania. Benchmarks: Stripe/Linear (calm precision, ruthless above-fold clarity, real product UI), Flutterwave/Paystack (warmth + trust for an African market).
 
-Primary conversion: **WhatsApp chat** — `https://wa.me/255759561311?text=<prefilled per page, see CONTENT.md>`. Every page must have a reachable WhatsApp CTA within one scroll, plus a persistent floating WhatsApp button.
+Primary conversion: **WhatsApp chat** — `https://wa.me/255776653898?text=<prefilled per page, see CONTENT.md>`. Every page must have a reachable WhatsApp CTA within one scroll, plus a persistent floating WhatsApp button.
 
 ## Stack & rules
 
